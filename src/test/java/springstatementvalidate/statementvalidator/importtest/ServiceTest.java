@@ -49,7 +49,6 @@ public class ServiceTest {
 
 		assertEquals(results.get(0).getDescription(),
 				statementService.readAndValidate(mockCsvFile).get(0).getDescription());
-
 	}
 
 }
