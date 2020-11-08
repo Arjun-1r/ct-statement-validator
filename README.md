@@ -6,7 +6,7 @@ If End balance is negative or the reference is duplicate. The application will r
 
 
 # Prerequisites
-Java 8 installed 
+Java 8 installed.
 maven latest installed.
 
 # Clone 
