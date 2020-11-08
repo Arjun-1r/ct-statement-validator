@@ -4,22 +4,17 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.test.context.junit4.SpringRunner;
-
-
 import springstatementvalidate.statementvalidator.model.Record;
 import springstatementvalidate.statementvalidator.model.ValidationResponse;
 import springstatementvalidate.statementvalidator.services.StatementInterface;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ServiceTest {
 	@Autowired
@@ -27,7 +22,7 @@ public class ServiceTest {
 
 	@Autowired
 	private StatementInterface statementService;
-	
+
 	@Test
 	public void shouldreadAndValidate() throws Exception {
 		List<ValidationResponse> results = new ArrayList<>();
@@ -52,7 +47,7 @@ public class ServiceTest {
 
 		MockMultipartFile mockCsvFile = new MockMultipartFile("data", "records.csv", "text/plain", csvFileBytes);
 
-		Assert.assertEquals(results.get(0).getDescription(),
+		assertEquals(results.get(0).getDescription(),
 				statementService.readAndValidate(mockCsvFile).get(0).getDescription());
 
 	}

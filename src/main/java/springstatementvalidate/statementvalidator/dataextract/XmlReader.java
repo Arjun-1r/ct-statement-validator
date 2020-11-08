@@ -13,7 +13,6 @@ import org.xml.sax.SAXException;
 import springstatementvalidate.statementvalidator.model.Record;
 
 public class XmlReader implements DataReader {
-	
 
 	private SAXParser createSaxParser() {
 		SAXParser saxParser = null;
@@ -26,8 +25,6 @@ public class XmlReader implements DataReader {
 		}
 		return saxParser;
 	}
-
-	
 
 	@Override
 	public List<Record> readMultipartFile(MultipartFile file) {

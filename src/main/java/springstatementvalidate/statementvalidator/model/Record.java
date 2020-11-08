@@ -7,12 +7,16 @@ import lombok.Setter;
 import lombok.ToString;
 
 @ToString
-@Getter 
+@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
+// Used lombok to avoid boiler plate code. 
+// template for CSV and XML
+
 public class Record {
-    private Long transactionReference;
+	private Long transactionReference;
 	private String accountNumber;
 	private String description;
 	private Double startBalance;
